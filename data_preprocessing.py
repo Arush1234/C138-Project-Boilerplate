@@ -1,12 +1,9 @@
-# Text Data Preprocessing Lib
 import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
 
-# to stem words
 from nltk.stem import PorterStemmer
 
-# object/instance of class PorterStemmer()
 stemmer = PorterStemmer()
 
 # importing json lib
@@ -72,11 +69,6 @@ def create_bot_corpus(words, classes, pattern_word_tags_list, ignore_words):
 
     return stem_words, classes, pattern_word_tags_list
 
-
-# Training Dataset: 
-# Input Text----> as Bag of Words 
-# Tags-----------> as Label
-
 def bag_of_words_encoding(stem_words, pattern_word_tags_list):
     
     bag = []
@@ -138,5 +130,3 @@ def preprocess_train_data():
 bow_data  , label_data = preprocess_train_data()
 print("first BOW encoding: " , bow_data[0])
 print("first Label encoding: " , label_data[0])
-
-
